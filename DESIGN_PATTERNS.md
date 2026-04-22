@@ -1,26 +1,25 @@
 # Design Patterns
 
-This article will explain 7 of my most favorite design patterns which I think every developer should be aware of.
+This article will explain 7 of my most favorite design patterns that I think every developer should be aware of.
 
-Design patterns are solutions to common problems that many developers face when writing code. They can help you write more readable, scalable, and maintainable software.
-Design patterns usually fall under one of these three categories: creational, structural, and behavioral.
+Design patterns are solutions to common problems that many developers face when writing code. They can help you write more readable, scalable, and maintainable code.
+Most design patterns fall under one of three categories: creational, structural, and behavioral.
 
-A lot of frameworks and libraries use the patterns I will be describing in this article.
-In fact, you have probably used some of these patterns in your favorite libraries without even realizing it.
+A lot of frameworks and libraries use the patterns I will be describing in this article. In fact, you have probably used some of these patterns in your favorite libraries without even realizing it.
 
 # Creational patterns
 
-Creational patterns are design patterns that are focused on the creation of objects.
+Creational patterns are design patterns that are focused how objects are created.
 
 ## 1. Builder
 
-The builder pattern is a creational pattern where complex objects are constructed step-by-step. It makes object creation easier to work with, and it makes your code way more readable.
+The builder pattern is a creational pattern where complex objects are constructed step-by-step. It makes object creation easier to work with, and it makes your code a lot more readable.
 
-Think of the builder pattern like a recipe - when you're following a recipe, you're not just throwing in all the ingredients all at once; you're adding ingredients step-by-step.
+Think of the builder pattern like a recipe - when you're following a recipe, you're not throwing in all the ingredients all at once; you're adding each ingredient step-by-step to come to your final result.
 
 ### Example
 
-Let's imagine we have a JavaScript object that represents a pizza:
+Let's imagine there is a JavaScript object that represents a pizza:
 
 ```js
 {
@@ -29,7 +28,7 @@ Let's imagine we have a JavaScript object that represents a pizza:
 }
 ```
 
-Instead of creating the object like this, we could create a builder class that lets you create the pizza step-by-step:
+Instead of creating the object using the object literal syntax, we could create a builder class that provides setters to create the pizza step-by-step:
 
 ```js
 class Pizza {
@@ -51,7 +50,7 @@ class Pizza {
 
 ```
 
-Now we can build the same pizza, but instead of creating a plain object literal, we can construct the pizza using the builder class instead.
+Now, we can build the same pizza, but instead of creating a plain object literal, we can construct the pizza step-by-step using the setters we defined in our builder class instead.
 
 ```js
 const pizza = new Pizza()
@@ -60,15 +59,14 @@ const pizza = new Pizza()
   .addTopping('pepperoni');
 ```
 
-Now our code just reads like plain English; we want to make a new pizza, put tomato sauce on it, then add cheese and pepperoni to the pizza.
+Now our code just reads like plain English; we want to make a new pizza, put tomato sauce on it, then add cheese and pepperoni.
 
-> In real-life scenarios, objects created using the builder pattern will usually be more complicated than this example.
+> In real-life scenarios, objects created using the builder pattern will usually be more complicated than the one in this example.
 
 ## 2. Singleton
 
-The singleton pattern is a creational pattern, and it is quite straightforward and easy to understand.
-It it a design pattern where a class can only have one instance. It's commonly used to manage access to shared resources, such as a database connection or a file.
-There's not much else to say about the singleton pattern, so I'm just going to move on to the example now.
+The singleton pattern is a creational pattern that is quite straightforward; it is a pattern where a class can only have one instance. It's commonly used to manage access to shared resources, such as a database connection or a file.
+There's not much else to say about the singleton pattern, so I'm just going to move on to the example.
 
 ### Example
 
@@ -92,7 +90,7 @@ class Logger {
 
 ```
 
-Right now, the `Logger` class doesn't implement the singleton pattern, but we can change that:
+In the example above, our `Logger` class doesn't implement the singleton pattern, but we can change that:
 
 ```js
 class Logger {
@@ -129,15 +127,15 @@ Now, the class will check whether there is already an existing instance of it. I
 
 ## 3. Factory
 
-The factory is a creational design pattern that handles the instantiation of classes via a single shared method or function.
-It avoids repetition and hides the inner logic and complexities.
+The factory pattern is a creational design pattern that handles the instantiation of classes via a single shared instance.
 
 ### Example
 
 To make this simpler to understand, let's take a look at an example.
-We have two classes - a Windows button class and a Linux button class.
+We have two classes - a Windows button class and a Linux button class. The Windows button will be red with rounded corners, and the Linux button will be blue with sharp corners.
 We have a variable named `platform`, and we want to create an instance of the `WindowsButton` class only if the platform is set to `'windows'`.
-As you can see, this gets pretty repetitive and complicated without the factory pattern:
+
+This gets pretty repetitive without the factory pattern:
 
 ```js
 const platform = 'windows';
@@ -172,9 +170,9 @@ button2.display();
 
 ```
 
-Not only is the code above repetitive, but it can be very difficult to scale and maintain. If there were 20 of these ternary operators all over the codebase and you wanted to add a new button class for MacOS, you would have to update the code in each of those 20 places, which is not okay.
+Not only is the code above repetitive, but it is also very difficult to scale and maintain. If there were 20 of these conditional checks all over the codebase and you wanted to add a new MacOS-themed button, you would have to update the code in each of those 20 places, which is a nightmare to maintain.
 
-So now, let's rewrite the code above with the factory pattern:
+Now, let's rewrite the code above with the factory pattern:
 
 ```js
 const platform = 'windows';
@@ -332,7 +330,7 @@ If you've worked with Express.js, then you might be familiar with middleware. Ex
 
 ## 7. Observer Pattern
 
-The observer pattern is another common behavioral pattern, which creates a one-to-many relationship between objects.
+The observer pattern is another common behavioral pattern used to create a one-to-many relationship between objects.
 
 It consists of a central object called the subject (or the publisher) and multiple objects that are dependent on the subject. The subject will automatically notify all of its dependent objects of any changes.
 
