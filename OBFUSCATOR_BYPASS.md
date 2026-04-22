@@ -311,7 +311,7 @@ if (x > 10) console.log('hello world');
 
 # Why you shouldn't use obfuscator.io
 
-The process I just showed you is not complicated. In fact, it's so simple that [https://obf-io.deobfuscate.io/](there are even sites dedicated to automating the process of deobfuscating this shit). What's the point of obfuscating your code when someone can just go to deobfuscate.io and get back the original code instantly? It does absolutely nothing but increase the size of your JavaScript file.
+The process I just showed you is not complicated. In fact, it's so simple that (https://obf-io.deobfuscate.io/)[there are even sites dedicated to automating the process of deobfuscating this shit]. What's the point of obfuscating your code when someone can just go to deobfuscate.io and get back the original code instantly? It does absolutely nothing but increase the size of your JavaScript file.
 
 # Alternatives
 
