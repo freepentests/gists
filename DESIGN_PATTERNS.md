@@ -289,16 +289,11 @@ class WeatherApi {
   }
 }
 
-class WeatherApiAdapter {
+class WeatherApiAdapter extends WeatherApi {
   static async getTemperature() {
     const farenheit = await WeatherApi.getTemperature();
     const celcius = (farenheit - 32) / 1.8;
     return celcius; 
-  }
-
-  static async getRainForecast() {
-    const response = await WeatherApi.getRainForecast();
-    return response;
   }
 }
 
